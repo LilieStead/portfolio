@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>570421-Portfolio</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <script src="assets/js/fade.js"></script>
+    <link rel="stylesheet" href="assets/fonts.css">
+</head>
+<!-- HEADER -->
+<header class="centercontents">
+    <h1>Software Development with Agile</h1>
+</header>
+<!-- END OF HEADER -->
+<body>
+    <!-- NAV -->
+    <nav class="centercontents">
+        <a href="index.html"><p>Sprint One</p></a>
+        <a href="sprint2.html"><p>Sprint Two</p></a>
+    </nav>
+    <!-- END OF NAV -->
+    <div id="container">
+        <div id="main">
+            <div id="mainsize">
+                <div id="header">
+                    <h1>Sprint One</h1>
+                    <p>16th October - 30th October</p>
+                </div>
+                <div class="flexcontainer">
+                    <div class="content">
+                        <h2>Sprint One Planning meeting</h2>
+                        <p class="date">Wednesday 11th October</p>
+                        <p>On Wednesday 11th October the group had sprint meeting. 
+                            The meeting involved the planning the execution of the first sprint.The team spoke to the product owner and identified the tasks that would 
+                             take more effort than other tasks. As the scrum leader I had taken the leading parts of the conversation and expanded on tasks the product 
+                             owner set out to ensure there was no miscommunication. </P>
+                        <h3>The trello board (task management system)</h3>
+                        <div class="flexcontainer">
+                        <img src="assets/img/Trello1.png" alt="">
+                        </div>
+                        <p>After the meeting the group identified tasks that would be dependent on others, and prioritized the tasks,
+                             then as a group we assigned a task based on group members strengths and weaknesses. The group decided to
+                              take one task at a time so group members can pick another task once done and do not have to wait on another
+                               group members to finish a task that they are dependent on. My task was to normalize the current database so platform was not longer 
+                            static data but rather a foreign key, this would also involve changing and adding multiple files to the existing solution  </p>
+                    </div>
+                </div>
+                <div class="flexcontainer fade">
+                    <div class="content">
+                        <h2>Normalise platform & Peer review</h2>
+                        <p class="date">Thursday 12th October</p>
+                        <p> Before doing my task I peer checked and tested another group members task before they merged their changes onto the existing solution (their task
+                            was to migrate the current solution to entity framework Core) so it needed to be done first before any other task was completed.</p><br>
+
+                            <p> Made a more visually appealing and accessible UI to users, then started my task of normalization of platform in the database 
+                            and the API. I redesign the database so the game table would take a foreign key from a platform table for a games platform 
+                            rather than using static data each games platform. After i edited the API files (gameDTO.cs, game.cs and repositories), I 
+                            also had to two new files to accommodate the changes to the database as platform would need its own files such as PlatformDTO.cs
+                            Platform.cs. When making the changes I found an error that prevented the data going to the front end, so i left it till the next day. When 
+                            developing my task i used inheritance and encapsulation object oriented programming so the game repository could used the public method get all games.</p>
+                            <h3>DTO files</h3>
+                            <div class="flexcontainer">
+                                <img src="assets/img/platform1.png" alt="">
+                            </div>
+                            <h3>Repositories</h3>
+                            <div class="flexcontainer">
+                                <img src="assets/img/platform2.png" alt="">
+                            </div>
+                            <h3>Platform and game files</h3>
+                            <div class="flexcontainer">
+                                <img src="assets/img/platform3.png" alt="">
+                            </div class="flexcontainer">
+                            <h3>Database tables</h3>
+                            <div class="flexcontainer">
+                                <img src="assets/img/platform4.png" alt="">
+                            </div>
+                    </div>
+                </div>
+                <div class="flexcontainer fade">
+                    <div class="content">
+                        <h2> Normalise platform</h2>
+                        <p class="date">Friday 13th October</p>
+                        <p>I identified the issue regarding the normalization of platform, the issue involved the java script file that fetched the data from the 
+                            API to the front end, so I found that the reason the java script want working was due to a the api  presenting that data differently to how it used before the
+                            I competed the normalization of platform, to fix this all i had to do was reference the platform name with platform in the java script, then I had 
+                            a group member look at my code to suggest any changes and test it to see if it was viable to 
+                            the existing solution. Then I merged my changes to the solution</p>
+                            <h3>Fixed java script</h3>
+                            <div class="flexcontainer">
+                                <img src="assets/img/platform5.png" alt="">
+                            </div>
+                    </div>
+                    <div class="flexcontainer fade">
+                        <div class="content">
+                            <h2>Creating github for other team</h2>
+                            <p class="date">Wednesday 18th October</p>
+                            <p>The other team need help when creating a place to store changes to their program and access their code since our group already had a github repositories I helped them make 
+                                a github repository and showed them how to use github desktop. I also assigned myself the task of creating a search function as i finished my task of normalise platform.
+                                 I started my task however due to time constraints I could not completed my task.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flexcontainer fade">
+                    <div class="content">
+                        <h2>Search game by title functionality</h2>
+                        <p class="date">Thursday 19th October</p>
+                        <p>
+                            I have finished the search function and made it so a user can type a game title and the website shows all games with a smiler title. The java script in the front
+                            end would not request the data from the API so I had to change the way the java script requests the data. When changing the Game repository I used Abstraction
+                            Object-Oriented Programming it has been told to use GetGamesByTitle() from the Game controller and the Game repository to get GetGamesByTitle() from the SQL repository. Ive also made changes to the front end and added vallation so a user can not 
+                            enter a NULL name, therefore breaking the program. As of writing i am waiting on one of my peers to review my changes so I can merge them to main. I also used privet variable mapper 
+                            so the controller and repository can communicate to the DTO and game.cs. The front end has validation so the user can not enter a blank title and if a user does enter 
+                            a blank title then the front end will informed the user that they can not do that.</p>
+                            <h3>The front end code</h3>
+                        <div class="flexcontainer">
+                            <img src="assets/img/Search1.png" alt="">
+                        </div>
+                        <h3>Game Repositories with edits</h3>
+                        <div class="flexcontainer">
+                            <img src="assets/img/Search2.png" alt="">
+                        </div>
+                        <h3>Game controller with edits</h3>
+                        <div class="flexcontainer">
+                            <img src="assets/img/Search2.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="flexcontainer fade">
+                    <div class="content">
+                        <h2>Merge errors</h2>
+                        <p class="date">Thursday 26th October</p>
+                        <p>Merge errors happened when two group members merged their code to main as they did not follow the framework, because of this me and another group member had correct and fix all the errors
+                            that where made after they merged to the main solution. We had to install all the auto mapper files back to the solution as one user did not use auto mapper, then one group member used the
+                            variable User and the other used the variable Users so we had to change all inheritance and encapsulation object oriented programming variable to User. I also had to incorporate everyone's changes into one
+                        database as three group members where working on different databases at one time. I then had to test it with everyone's parts of the API to make sure that it was compatible with the whole solution.</p>
+                    </div>
+                </div>
+                <div class="flexcontainer fade">
+                    <div class="content">
+                        <h2>Assigned new tasks to group members </h2>
+                        <p class="date">Friday 27th October</p>
+                        <p>Almost all group members have completed their first tasks or more so we worked on assigning another tasks. I assigned my self to making each game have an average score based on 
+                            all a games reviews.
+                        </p>
+                    </div>
+                </div>
+                <div class="flexcontainer fade">
+                    <div class="content">
+                        <h2>Display the average score against each game & Database</h2>
+                        <p class="date">Friday 27th October</p>
+                        <p>When planning to work on displaying the average score against each game I was going to make a method that was could be used in the game controller, however due to how get game by title 
+                            works this would not be possible so i opted for changing each current name method to get data on a game.
+                            I had redesign the database with two group members changes as they where working on two different databases and it was getting overwhelming to keep track of changes. I also had to remove
+                            the score colum from the game table as it would not be needed after I complete my task. <br>
+                            Due to the changes made in the database i had to remove any verbile in the Game DTO and Game.cs that resented Score, then i had to use encapsulation oriented programming as 
+                            the game SQL repository would need to use the review repository to work out an arrange score, as with out the game controller having assess to review repository it would not be possible. When editing 
+                            each method in the SQL repository I had a group member help me when making the code to find the score based on what the method was doing as it was extremely changing. Each method will look through all its games
+                            then gets the reviews where the game id matches the game id in the game table, then calculate the average  based on the all the scores taken from the reviews, finally it will round the score for the front end. The only 
+                            difference between the get all games method and get games by title method is I had add contains to the line that looks for the game id.
+                        </p>
+                        <h3>Get all games by title method</h3>
+                        <div class="flexcontainer">
+                            <img src="assets/img/Score1.png" alt="">
+                        </div>
+                        <h3>Get games by title method</h3>
+                        <div class="flexcontainer">
+                            <img src="assets/img/Score2.png" alt="">
+                        </div>
+                        <h3>All DTOs that had to be change</h3>
+                        <div class="flexcontainer">
+                            <img src="assets/img/Score3.png" alt="">
+                        </div>
+                        <h3>The new Game.cs file</h3>
+                        <div class="flexcontainer">
+                            <img src="assets/img/Score4.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="flexcontainer fade">
+                    <div class="content">
+                        <h2>Sprint one retrospective</h2>
+                        <p class="date">Wednesday 01 October</p>
+                        <p> All the group participated in a sprint one retrospective, this consisted of demoing the project to the product owner and talking them through how the project will work.
+                        </p>
+                    </div>
+                </div>
+                
+                </div>
+                
+            </div>
+        </div>
+
+    </div>
+</body>
+<!-- FOOTER -->
+<footer>
+    <div id="topfooter" class="centercontents">
+        <h2>Software Development with Agile</h2>
+    </div>
+    <div  id="bottomfooter" class="centercontents">
+        <p>Student number - 570421</p>
+    </div>
+</footer>
+<!-- END OF FOOTER -->
+</html>
