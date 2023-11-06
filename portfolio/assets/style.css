@@ -164,6 +164,7 @@ align-items: center;
     max-width: 80%;
     border-radius: 5px;
     text-align: center;
+    min-width: 30rem;
     /* margin: 1.5rem 0; */
 }
 .content p{
@@ -265,3 +266,15 @@ body{
 
 
 /* END OF SCROLL BAR SETTINGS */
+
+/* ZOOM SCALE */
+
+@media screen and (max-width: 732px) {
+    #main{
+        justify-content: space-around;
+        min-width: 75%;
+    }
+}
+
+
+/* END OF ZOOM SCALE */

@@ -40,7 +40,7 @@
                         </p>
                         <h3>The trello board (task management system)</h3>
                         <div class="flexcontainer">
-                        <img src="assets/img/Trello2.png" alt="">
+                            <img src="assets/img/Trello2.png" alt="">
                         </div>
                         <p> The group isn't fully decided if they want to make a login feature at the moment as time constraints and other assignments may get in the way, and a login feature will
                             make a lot more task such as redesign the UI and make new methods to find a users reviews based on their review, so that is yet to be decided.
@@ -53,22 +53,58 @@
                             <p>I completed both tasks that I assigned myself to do now (Search game to not be capital sensitive and Suggestion/Search box and Loading icon while games load). To make the loading icon/ animation 
                                 I first had to find so-me HTML and CSS that displayed a animated loading icon that suited the UI of the project, then I made some smaller adjustments to it to suit the the 
                                 look of the project. Then I had to add a line to the js that displays reviews and games. The line will set the loading icons style to none so its not visible to the user. To make the 
-                                search by title none cap stative mapper was just removed from the method and variables that use items form the GameDTO and Game.cs, I have used object oriated prinsables to achive this as 
+                                search by title none cap stative mapper was just removed from the method and variables that use items form the GameDTO and Game.cs, I have used object oriented principles to achieve this as 
                                 it follows encapsulation, everything in them files will used in the method for searching game by title.
                             </p>
-                            <h3>HTML and JS used to make the loading icon diaper when loaded </h3>
+                            <h3>HTML and JS used to make the loading icon disappear when loaded </h3>
                             <div class="flexcontainer">
                                 <img src="assets/img/Loading1.png" alt="">
                             </div>
                             <h3>Adjusted search game by title method in the SQL repository</h3>
                             <div class="flexcontainer">
                                 <img src="assets/img/Cap1.png" alt="">
-
-                            </div>
-                            <div class="flexcontainer">
-
                             </div>
                         </div>
+                    </div>
+                    <div class="flexcontainer fade">
+                        <div class="content">
+                            <p class="date">sunday 5th November</p>
+                            <h2>Uniform forms, Prevent Duplicate Username on sign up page & no games found</h2>
+                            <p>I have completed and tested the Prevent Duplicate Username & Uniform forms. To make all the forms look more appalling and uniformed i started by applying all the CSS I made to all the other forms,
+                                then I adjusted all the forms that looked smiler to each other the the ui looks more appalling. To complete prevent duplicate username I first had to add to the user controller. I had to make an If statement 
+                                that look to see if the GameDM username matched a username in the database, then if it did then return a error code that will be returned to the UI so the user knows why their account couldn't be created. Then
+                                adjusted the sign up pages JS so the it would know what to do with the error code, then display it to the user. To get a message to show when no games are not found I first had to add a if statment to 
+                                the game controller that looked to see if any games where found and if not then returns not found to the front end where the js will display it to the user. </p>
+                                <h3>The game controller with changes.</h3>
+                                <div class="flexcontainer">
+                                    <img src="assets/img/Signup1.png" alt="">
+                                </div>
+                                <h3>The js that displays the error to the user</h3>
+                                <div class="flexcontainer">
+                                    <img src="assets/img/Signup2.png" alt="">
+                                </div>
+                                <h3>The HTML and js with new changes for game not found and uniform forms </h3>
+                                <div class="flexcontainer">
+                                    <img src="assets/img/Nogamesfound1.png" alt="">
+                                </div>
+                                <h3>changes made to the game controller </h3>
+                                <div class="flexcontainer">
+                                    <img src="assets/img/Nogamesfound3.png" alt="">
+                                </div>
+                                <h3>How the UI displays to the user</h3>
+                                <div class="flexcontainer">
+                                    <img src="assets/img/Nogamesfound2.png" alt="">
+                                </div>
+                                <h3>sign in form</h3>
+                                <div class="flexcontainer">
+                                    <img src="assets/img/form1.png" alt="">
+                                </div>
+                            <p>After completing the no games found in the search by game title function, I have added a task to do the same when using search review by user name as it would be benefit the user. Adding a 
+                                task that tells a user that now reviews where found will be smiler to how I implemented no games to search by title with some small adjustments. 
+                            </p>
+                        </div>
+                    </div>
+            </div>
     </div>
     <footer>
         <div id="topfooter" class="centercontents">
