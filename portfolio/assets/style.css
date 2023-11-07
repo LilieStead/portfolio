@@ -146,6 +146,7 @@ align-items: center;
     font-family: Unidays-Book, sans-serif;
     text-decoration: underline;
     font-size: 1.1rem;
+    
 }
 
 /* END OF PAGE HEADERS */
@@ -165,6 +166,7 @@ align-items: center;
     border-radius: 5px;
     text-align: center;
     min-width: 30rem;
+    max-width: 30rem;
     /* margin: 1.5rem 0; */
 }
 .content p{
@@ -178,6 +180,7 @@ align-items: center;
 h3{
     font-family: Unidays-Heavy, sans-serif;
     text-align: center;
+    margin: 0.5rem 0;
 }
 
 .content .date{
@@ -237,6 +240,10 @@ body{
     font-size: 2rem;
 }
 
+
+.content p{
+    margin-top: 0.5rem;
+}
 
 
 /* END OF CONTENT TITLE */
