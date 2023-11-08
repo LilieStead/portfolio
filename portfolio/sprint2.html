@@ -82,7 +82,9 @@
                             then I adjusted all the forms that looked smiler to each other the the ui looks more appalling. To complete prevent duplicate username I first had to add to the user controller. I had to make an If statement 
                             that look to see if the GameDM username matched a username in the database, then if it did then return a error code that will be returned to the UI so the user knows why their account couldn't be created. Then
                             adjusted the sign up pages JS so the it would know what to do with the error code, then display it to the user. To get a message to show when no games are not found I first had to add a if statment to 
-                            the game controller that looked to see if any games where found and if not then returns not found to the front end where the js will display it to the user. </h3>
+                            the game controller that looked to see if any games where found and if not then returns not found to the front end where the js will display it to the user, Once I did this I had ran into an error as when testing the task 
+                            if a user used a password that another user had the 'username already exits' error would show so I had to inherit the Get user id by name methord from the user controller so I could compare just the user rather than 
+                            every field that is in the user table.</h3>
                             <h3>The game controller with changes.</h3>
                             <div class="flexcontainer">
                                 <img src="assets/img/Signup1.png" alt="">
