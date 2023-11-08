@@ -90,13 +90,13 @@ footer{
 #topfooter h2{
     color: #FFFFFF;
     font-family: Unidays-Heavy, sans-serif;
-    font-size: 1.3rem;
+    font-size: 2.5rem;
     padding: 0.5rem 0;
 }
 
 #bottomfooter p{
     font-family: Unidays-Heavy, sans-serif;
-    font-size: 1rem;
+    font-size: 2rem;
     
 }
 
@@ -120,7 +120,7 @@ align-items: center;
 
 #main{
     justify-content: space-around;
-    min-width: 55%;
+    min-width: 100%;
 }
 #mainsize{
     align-items: center;
@@ -155,18 +155,16 @@ align-items: center;
 
 .content{
     background-color: #FFFFFF;
-    min-width: 60%;
-    max-width: 60%;
+    max-width: 70%;
     border-radius: 5px;
     padding: 1rem;
     margin: 1.2rem;
 }
 .content img{
-    max-width: 80%;
     border-radius: 5px;
     text-align: center;
-    min-width: 30rem;
-    max-width: 30rem;
+    min-width: 80rem;
+    max-width: 80rem;
     /* margin: 1.5rem 0; */
 }
 .content p{
@@ -243,8 +241,12 @@ body{
 
 .content p{
     margin-top: 0.5rem;
+    font-size: 1.5rem;
 }
 
+.content h2, .content h3{
+    font-size: 2.2rem;
+}
 
 /* END OF CONTENT TITLE */
 
@@ -276,12 +278,64 @@ body{
 
 /* ZOOM SCALE */
 
-@media screen and (max-width: 732px) {
-    #main{
-        justify-content: space-around;
-        min-width: 75%;
+@media screen and (max-width: 1800px) {
+    .content img{
+        max-width: 50rem;
+        min-width: 50rem;
     }
 }
 
 
 /* END OF ZOOM SCALE */
+
+
+
+
+/* LOADING */
+.loading{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0.5rem;
+    animation: loading 2.5s ease-in-out infinite;
+  }
+  
+  @keyframes loading {
+    0%,
+    100% {
+      transform: scale(0.2);
+      background-color: #1DD577;
+    }
+    42% {
+      background-color: #7D53F8;
+    }
+    50% {
+      transform: scale(1);
+      background-color: #1db9d5;
+    }
+  }
+  
+  
+ .one{
+    animation-delay:0.0s;
+  }
+  .two{
+    animation-delay:0.2s;
+  }
+  .three{
+    animation-delay:0.4s;
+  }
+  .four{
+    animation-delay:0.8s;
+  }
+  .five{
+    animation-delay:1.0s;
+  } 
+
+#loadingcontainer{
+    margin-top: 9rem;
+    margin-bottom: 9rem;
+}
+
+/* END OF LOADING */
