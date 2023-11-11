@@ -29,8 +29,8 @@
                 </div>
                 <div class="flexcontainer">
                     <div class="content ">
-                        <h2>Sprint two Planning meetin</h2>
-                        <p class="date">Wednesday 1st Novembe</p>
+                        <h2>Sprint two Planning meeting</h2>
+                        <p class="date">Wednesday 1st November</p>
                         <p>After the group finished the sprint one retrospective, we started a sprint two planning meeting to discuss features and improvements we would add and complete for 
                             the end of sprint two. There were two main priorities when creating tasks for sprint two: security and improving the user’s experience. One significant feature 
                             the group had considered is a login feature. With a login feature, the user will be logged in throughout the website. Doing this would eliminate the need for the
@@ -118,6 +118,50 @@
                             </div>
                         <p>After completing the no games found in the search by game title function, I added a task to do the same when using search review by user name to benefit the user. 
                             Adding a task that tells a user that reviews were found will be similar to how I implemented no games to search by title with some minor adjustments. </p>
+                    </div>
+                </div>
+                <div class="flexcontainer fade">
+                    <div class="content ">
+                        <h2>Validation for sign up form, API validation for same email and fixing the username validation bug fix.</h2>
+                        <p class="date">Thursday 9th November</p>
+                        <p>After doing completing the username validation so a user can not make an account with the same username as another account, I thought it would be appropriate to do 
+                            the same thing with an email. When testing this change, I encountered an error when validating the username as if a user was to copy the same elements (eg. First 
+                            name, last name, password, or email) form other accounts then the ‘username already exits’ error would show instead of making a new account. Leaving this error in
+                             the API would ruin the user experience as a user could have the first name or last name as another account. To fix this I first had to inherit the Get use id by 
+                             name method so we could make a variable that would store details if a user with that username already exists, then I put that variable in and if statement and if 
+                             the variable had data in it, then a user with that username already exits and would return an error. <br> <br> 
+                            
+                             Then to make the API validate a user’s email we first need to add a method to the SQL user repository to get all the users stored in the database, then I made the
+                              interface repository inherit the method for later us. Then I made the current method in the user controller inherit the method I added to the interface repository.
+                               After than I just used a for each statement in conjunction to that method to look at each user and see if they had the same username or not, and if they did return an
+                             error. <br> <br>
+                            
+                             Then me and another group member that it would be a grate idea if the user was sent any semi-serious error messages (errors sent from the api) through a pop up, so the
+                              user had no choice to use it so I just link their Java scripted to the webpage then made some adjustments so it would read the errors straight from the API.<br> <br>
+                            
+                              Finally, I added front end validation to the sign in page as there was none beforehand. I did this by adding an event listener to the java script so when the submit button 
+                              is pressed it will look through all the user inputs and compare then with if statements to see if they match the right formats. If the inputs do not match, then the user will
+                               be sent an error through the sine up web page.</P>
+                        <h3>The method in the user controller  used to sign a user in with the changes used to fix the username errors and validate a users email</h3>
+                        <div class="flexcontainer">
+                        <img src="assets/img/Emailvalidation1.png" alt="">
+                        </div>
+                        <h3>The method in the SQL user repository to get all users so the controller can validate a user email.</h3>
+                        <div class="flexcontainer">
+                        <img src="assets/img/Emailvalidation2.png" alt="">
+                        </div>
+                        <h3>How the front end displays front end validation</h3>
+                        <div class="flexcontainer">
+                        <img src="assets/img/Signin1.png"lt="">
+                        </div>
+                        <h3>The JavaScript and HTML that uses the error code and displays that error in a pop-up to user.</h3>
+                        <div class="flexcontainer">
+                        <img src="assets/img/Pop-up1.png"lt="">
+                        </div>
+                        <h3>How the pop-up displays to the user</h3>
+                        <div class="flexcontainer">
+                        <img src="assets/img/Pop-up2.png"lt="">
+                        </div>
                     </div>
                 </div>
     </div>
