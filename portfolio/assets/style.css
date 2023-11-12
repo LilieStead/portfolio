@@ -339,3 +339,18 @@ body{
 }
 
 /* END OF LOADING */
+
+/* LINKS IN P TAG */
+
+p a{
+    cursor: pointer;
+    text-decoration: underline;
+    transition: 1.5s;
+    color: #000000;
+}
+
+p a:hover{
+    color: #7D53F8;
+    transition: 0.5s;
+}
+/* END OF LINKS IN P TAG */

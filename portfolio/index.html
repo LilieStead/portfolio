@@ -29,51 +29,76 @@
                 </div>
                 <div class="flexcontainer">
                     <div class="content">
-                        <h2>Sprint One Planning meeting</h2>
+                        <h2>Sprint One Planning meeting & setting up Git Hub</h2>
                         <p class="date">Wednesday 11th October</p>
-                        <p>On Wednesday 11th October the group had sprint meeting. 
-                            The meeting involved the planning the execution of the first sprint.The team spoke to the product owner and identified the tasks that would 
-                             take more effort than other tasks. As the scrum leader I had taken the leading parts of the conversation and expanded on tasks the product 
-                             owner set out to ensure there was no miscommunication. </P>
+                        <p>On Wednesday, 11th October the group had a sprint meeting with the product owner. The meeting involved the planning the execution of the first 
+                            sprint. The product owner made some requirements and tasks they would like in the solution. The team spoke to the product owner and identified 
+                            the tasks that would take more effort than other tasks and tasks that may not be as essential as others. As the scrum leader, I had taken the 
+                            leading parts of the conversation and expanded on tasks by asking how they would like specific tasks to be displayed to the user and how they 
+                            would like them executed.<br> <br>
+
+                            After the meeting, the group identified tasks that would be dependent on others and prioritized the task. Then we assigned a task based on group 
+                            member's strengths and weaknesses. The group decided to take one task at a time so group members could pick another one once done and not have to
+                             wait for other group members to finish a task they depended on. My task was to normalize the current database so the platform was no longer static
+                              data but rather a foreign key, this would also involve changing and adding multiple files to the existing solution. <br> <br>
+                            
+                              Then, another group member and I made and tested a git hub repository for the solution, as it will ease the process of group members uploading code
+                               at multiple points. Each group member has their own branch that they could make changes to, however, if they wanted to upload changes to the main 
+                               solution, then it will need to be approved by another team member to ensure that no changes made will add errors to the main version.<br><br>
+                                <a href="https://github.com/LilieStead/UniGames">If you would like to see the repository click here.</a></P>
                         <h3>The trello board (task management system)</h3>
                         <div class="flexcontainer">
                         <img src="assets/img/Trello1.png" alt="">
+                        <h3>The github repository</h3>
+                        <div class="flexcontainer">
+                        <img src="assets/img/Github.png" alt="">
                         </div>
-                        <p>After the meeting the group identified tasks that would be dependent on others, and prioritized the tasks,
-                             then as a group we assigned a task based on group members strengths and weaknesses. The group decided to
-                              take one task at a time so group members can pick another task once done and do not have to wait on another
-                               group members to finish a task that they are dependent on. My task was to normalize the current database so platform was not longer 
-                            static data but rather a foreign key, this would also involve changing and adding multiple files to the existing solution  </p>
                     </div>
                 </div>
                 <div class="flexcontainer fade">
                     <div class="content">
-                        <h2>Normalise platform & Peer review</h2>
+                        <h2>peer review, UI redesign & Normalisation of platform </h2>
                         <p class="date">Thursday 12th October</p>
-                        <p> Before doing my task I peer checked and tested another group members task before they merged their changes onto the existing solution (their task
-                            was to migrate the current solution to entity framework Core) so it needed to be done first before any other task was completed.</p><br>
+                        <p> Before doing my task, I peer-checked and tested another group member's task before they merged their changes onto the existing solution (their task was to
+                             migrate the current solution to entity framework Core), so it needed to be done first before any other task was completed. <br> <br>
 
-                            <p> Made a more visually appealing and accessible UI to users, then started my task of normalization of platform in the database 
-                            and the API. I redesign the database so the game table would take a foreign key from a platform table for a games platform 
-                            rather than using static data each games platform. After i edited the API files (gameDTO.cs, game.cs and repositories), I 
-                            also had to two new files to accommodate the changes to the database as platform would need its own files such as PlatformDTO.cs
-                            Platform.cs. When making the changes I found an error that prevented the data going to the front end, so i left it till the next day. When 
-                            developing my task i used inheritance and encapsulation object oriented programming so the game repository could used the public method get all games.</p>
-                            <h3>DTO files</h3>
+                             I then made a more visually appealing and accessible UI to users, and started my task of normalization of the platform in the database and the API. I 
+                             redesigned the database so the game table would take a foreign key from a platform table for a game platform rather than using static data for each game
+                              platform. I had to remove the existing platform classes in the gameDTO.cs and game.cs and added different classes in them both that would inherit platform
+                               information from classes from the new PlatformDTO.cs and Platform.cs. Both files are needed otherwise, platform information will not be gathered, I then had
+                                add a DBSET to the GameDbContext.cs so the API could use the PlatformDTO and Platform.cs to make queys. When making the changes. I then had to edit the SQL
+                                 game repository as a line was needed to include the platform with the game when outputting data, this was done by using the entity frame work function
+                                .include . Finally I needed to make a mapper method to that inherited the both PlatformDTO and the Game.cs that linked them together when they needed to
+                                be used in a method. I found an error that prevented the data from going to the front end, so I left it till the next day.
+                            
+                        </p><br>
+                            <h3>Game & Platform DTO files</h3>
                             <div class="flexcontainer">
                                 <img src="assets/img/platform1.png" alt="">
                             </div>
-                            <h3>Repositories</h3>
+                            <h3>Get all games method in the SQL repository with changes to include the platform </h3>
                             <div class="flexcontainer">
                                 <img src="assets/img/platform2.png" alt="">
                             </div>
-                            <h3>Platform and game files</h3>
+                            <h3>Game.cs and platform.cs files</h3>
+                            <div class="flexcontainer">
+                                <img src="assets/img/platform6.png" alt="">
+                            </div>
+                            <h3>GameDbContext.cs with DBSET Platform and auto mapper with auto mapper method  </h3>
                             <div class="flexcontainer">
                                 <img src="assets/img/platform3.png" alt="">
                             </div class="flexcontainer">
-                            <h3>Database tables</h3>
+                            <h3>Database's game and platform tables</h3>
                             <div class="flexcontainer">
                                 <img src="assets/img/platform4.png" alt="">
+                            </div>
+                            <h3>HTML made for the UI</h3>
+                            <div class="flexcontainer">
+                                <img src="assets/img/UI1.png" alt="">
+                            </div>
+                            <h3>The UI after the redesign</h3>
+                            <div class="flexcontainer">
+                                <img src="assets/img/UI2.png" alt="">
                             </div>
                     </div>
                 </div>

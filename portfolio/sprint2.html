@@ -62,10 +62,6 @@
                         <div class="flexcontainer">
                             <img src="assets/img/Loading1.png" alt="">
                         </div>
-                        <h3>Adjusted search game by title method in the SQL repository</h3>
-                            <div class="flexcontainer">
-                                <img src="assets/img/Cap1.png" alt="">
-                            </div>
                         <h3>Loading icon animation</h3>
                         <div class="flexcontainer">
                             <div id="loadingcontainer">
@@ -76,6 +72,11 @@
                                 <div class="five loading"></div>
                             </div>
                         </div>
+                        <h3>Adjusted search game by title method in the SQL repository</h3>
+                            <div class="flexcontainer">
+                                <img src="assets/img/Cap1.png" alt="">
+                            </div>
+                        
                     </div>
                 </div>
                 <div class="flexcontainer">
@@ -86,12 +87,10 @@
                             all the other forms, then I adjusted all the forms that looked smiler to each other so the UI looks more appalling.<br><br>
                             To prevent duplicate usernames, I first had to add to the user controller. I had to make an If statement that look to see if the GameDM username matched a username
                              in the database. Then if it did then return an error code that will be returned to the UI so the user knows why their account couldn't be created. Then I adjusted
-                              the sign-up page and its JS so it would know what to do with the error code, and would display an error to the user. Once I did completed the task, I ran into an 
-                              error when testing. If a user used a password that another user had, the 'username already exists' error would show to the user, so I had to inherit the Get user 
-                              id by name method from the SQL repository so the method could compare just the user rather than all other fields. <br> <br>
-                              To get a message to show when no games are not found I first had to add an if statement to the game controller to look to see if data gotton from the API was 0 
-                              (meaning no games was found) . If no games were found, then the JS file will make a new table row in the front end and put 'no games found' in it so the user
-                               can see. </p>
+                              the sign-up page and its JS so it would know what to do with the error code, and would display an error to the user. After doing this task I added a new task to
+                              validate if an email a user signs-up is already in use, to improve the solutions security. <br> <br>
+                              To get a message to show when no games are not found I first had to add an if statement to the search game JavaScript to look to see if data gotten from the API was equal
+                              to 0 (meaning no games was found) . If no games were found, then the JS file will make a new table row in the front end and put 'no games found' in it so the user can see. </p>
                             <h3>The game controller with changes.</h3>
                             <div class="flexcontainer">
                                 <img src="assets/img/Signup1.png" alt="">
