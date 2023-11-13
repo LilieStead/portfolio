@@ -48,10 +48,11 @@
                                 <a href="https://github.com/LilieStead/UniGames">If you would like to see the repository click here.</a></P>
                         <h3>The trello board (task management system)</h3>
                         <div class="flexcontainer">
-                        <img src="assets/img/Trello1.png" alt="">
+                            <img src="assets/img/Trello1.png" alt="">
+                        </div>
                         <h3>The github repository</h3>
                         <div class="flexcontainer">
-                        <img src="assets/img/Github.png" alt="">
+                            <img src="assets/img/Github.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -106,11 +107,15 @@
                     <div class="content">
                         <h2> Normalise platform</h2>
                         <p class="date">Friday 13th October</p>
-                        <p>I identified the issue regarding the normalization of platform, the issue involved the java script file that fetched the data from the 
-                            API to the front end, so I found that the reason the java script want working was due to a the api  presenting that data differently to how it used before the
-                            I competed the normalization of platform, to fix this all i had to do was reference the platform name with platform in the java script, then I had 
-                            a group member look at my code to suggest any changes and test it to see if it was viable to 
-                            the existing solution. Then I merged my changes to the solution</p>
+                        <p>I identified the issue regarding the normalisation of the platform, the issue involved the Java script file that fetched the 
+                            data from the API to the front end. I found that the Java script was not working because the API presented the data differently 
+                            from how it used to before I added the task. To fix this, I had to reference the platform name with the word platform in the Javascript
+                             (to get the platform, the Java script had to use Game.Platformname.Platformname). The reason the Java script has to reference the 
+                             platform differently than what it used to is because of the Game.cs and GameDTO changes as they inherit the Plafrom.cs and DTO class,
+                              so the JavaScript needs to be told to look in the platform DTO to get the platform name. <br><br>
+
+                            I then had a group member look at my code to suggest any changes and test it to see if it was viable to the existing solution. 
+                            Then, I merged my changes into the solution.</p>
                             <h3>Fixed java script</h3>
                             <div class="flexcontainer">
                                 <img src="assets/img/platform5.png" alt="">
@@ -120,9 +125,9 @@
                         <div class="content">
                             <h2>Creating github for other team</h2>
                             <p class="date">Wednesday 18th October</p>
-                            <p>The other team need help when creating a place to store changes to their program and access their code since our group already had a github repositories I helped them make 
-                                a github repository and showed them how to use github desktop. I also assigned myself the task of creating a search function as i finished my task of normalise platform.
-                                 I started my task however due to time constraints I could not completed my task.
+                            <p>The other team need help when creating a place to store changes to their program and access their code since our group already had a 
+                                GitHub repository, I helped them make a GitHub repository and showed them how to use GitHub desktop. I also assigned myself the task
+                                 of creating a search function as I finished my task of normalise platform.
                             </p>
                         </div>
                     </div>
@@ -131,24 +136,40 @@
                     <div class="content">
                         <h2>Search game by title functionality</h2>
                         <p class="date">Thursday 19th October</p>
-                        <p>
-                            I have finished the search function and made it so a user can type a game title and the website shows all games with a smiler title. The java script in the front
-                            end would not request the data from the API so I had to change the way the java script requests the data. When changing the Game repository I used Abstraction
-                            Object-Oriented Programming it has been told to use GetGamesByTitle() from the Game controller and the Game repository to get GetGamesByTitle() from the SQL repository. Ive also made changes to the front end and added vallation so a user can not 
-                            enter a NULL name, therefore breaking the program. As of writing i am waiting on one of my peers to review my changes so I can merge them to main. I also used privet variable mapper 
-                            so the controller and repository can communicate to the DTO and game.cs. The front end has validation so the user can not enter a blank title and if a user does enter 
-                            a blank title then the front end will informed the user that they can not do that.</p>
-                            <h3>The front end code</h3>
+                        <p>I finished the search function and made it so a user can type a game title and the website shows all games with a smiler title. I first had to 
+                            make a new method in the Game controller. The method uses the HTTPGet to find what the user has typed by using the URL. It looks for 'Title =' 
+                            with what the user typed to determine what it is looking for, then I had to make a new method in the SQL game repository. The method made in 
+                            the SQL game repository uses the entity frame work method '.contain' line to compare the title that the user with every game title. Then it 
+                            takes the games that contain what the user typed after I had to add/inherit the method in the interface game repository so the game controller
+                             can inherit the method and use it.<br><br>
+
+                            To allow the front end to use the API, I first had to make a form in which a user can enter the game's title. The form uses the POST method so
+                             the user input is stored in the URL when the page refreshes. The I needed to make a JavaScript file that uses a built-in function to search in
+                              the URL for the title to then add the title to the fetch that the JavaScript uses to ask the API for all games that have that title.<br><br>
+                            
+                            Originally, in the SQL game repository, I was going to use the entity framework method '.where' rather than '.contains'; however, if this was 
+                            implanted instead, it would mean that the user would need to type a name exactly to find the game they are looking for, and this would not be
+                             user friendly.<br> <br>
+                            </p>
+                        <h3>The HTML and JS to fetch the data from the API</h3>
                         <div class="flexcontainer">
                             <img src="assets/img/Search1.png" alt="">
                         </div>
-                        <h3>Game Repositories with edits</h3>
+                        <h3>How the UI looks</h3>
+                        <div class="flexcontainer">
+                            <img src="assets/img/Search5.png" alt="">
+                        </div>
+                        <h3>The get games by title method added to the SQL game repository</h3>
                         <div class="flexcontainer">
                             <img src="assets/img/Search2.png" alt="">
                         </div>
-                        <h3>Game controller with edits</h3>
+                        <h3>The Http get method added to the game controller</h3>
                         <div class="flexcontainer">
-                            <img src="assets/img/Search2.png" alt="">
+                            <img src="assets/img/Search3.png" alt="">
+                        </div>
+                        <h3>The method made inherited in the Interface repository</h3>
+                        <div class="flexcontainer">
+                            <img src="assets/img/Search4.png" alt="">
                         </div>
                     </div>
                 </div>
@@ -156,24 +177,27 @@
                     <div class="content">
                         <h2>Merge errors</h2>
                         <p class="date">Thursday 26th October</p>
-                        <p>Merge errors happened when two group members merged their code to main as they did not follow the framework, because of this me and another group member had correct and fix all the errors
-                            that where made after they merged to the main solution. We had to install all the auto mapper files back to the solution as one user did not use auto mapper, then one group member used the
-                            variable User and the other used the variable Users so we had to change all inheritance and encapsulation object oriented programming variable to User. I also had to incorporate everyone's changes into one
-                        database as three group members where working on different databases at one time. I then had to test it with everyone's parts of the API to make sure that it was compatible with the whole solution.</p>
+                        <p>Merge errors happened when two group members merged their code to the main version as they did not follow the framework, because of this me and, another group member corrected and fixed
+                             all the errors that were made after they merged to the main solution. We had to re-install all the auto mapper and entity framework extension files back to the solution as one group
+                              member did not use auto mapper and didn't use the latest version of main, then one group member used the variable 'User' and the other group member used the variable 'Users' so we
+                               had change the verbals to 'User' so all methods inherited 'User' rather than 'Users'. <br><br>
+
+                            I also had to incorporate everyone's changes into one database, as three group members were working on different databases at one time. I then had to test it with everyone's parts of the
+                             API to make sure that it was compatible with the whole solution.</p>
                     </div>
                 </div>
                 <div class="flexcontainer fade">
                     <div class="content">
                         <h2>Assigned new tasks to group members </h2>
                         <p class="date">Friday 27th October</p>
-                        <p>Almost all group members have completed their first tasks or more so we worked on assigning another tasks. I assigned my self to making each game have an average score based on 
-                            all a games reviews.
+                        <p>Almost all group members completed their first tasks or more, so we worked on assigning other tasks to the group member who had finished the tasks they were assigned. I assigned myself to make
+                             each game have an average score based on a game's reviews.
                         </p>
                     </div>
                 </div>
                 <div class="flexcontainer fade">
                     <div class="content">
-                        <h2>Display the average score against each game & Database</h2>
+                        <h2>Display the average score against each game </h2>
                         <p class="date">Friday 27th October</p>
                         <p>When planning to work on displaying the average score against each game I was going to make a method that was could be used in the game controller, however due to how get game by title 
                             works this would not be possible so i opted for changing each current name method to get data on a game.
