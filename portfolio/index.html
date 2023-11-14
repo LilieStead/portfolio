@@ -175,7 +175,7 @@
                 </div>
                 <div class="flexcontainer fade">
                     <div class="content">
-                        <h2>Merge errors</h2>
+                        <h2>Merge errors & database readjustment</h2>
                         <p class="date">Thursday 26th October</p>
                         <p>Merge errors happened when two group members merged their code to the main version as they did not follow the framework, because of this me and, another group member corrected and fixed
                              all the errors that were made after they merged to the main solution. We had to re-install all the auto mapper and entity framework extension files back to the solution as one group
@@ -198,32 +198,44 @@
                 <div class="flexcontainer fade">
                     <div class="content">
                         <h2>Display the average score against each game </h2>
-                        <p class="date">Friday 27th October</p>
-                        <p>When planning to work on displaying the average score against each game I was going to make a method that was could be used in the game controller, however due to how get game by title 
-                            works this would not be possible so i opted for changing each current name method to get data on a game.
-                            I had redesign the database with two group members changes as they where working on two different databases and it was getting overwhelming to keep track of changes. I also had to remove
-                            the score colum from the game table as it would not be needed after I complete my task. <br>
-                            Due to the changes made in the database i had to remove any verbile in the Game DTO and Game.cs that resented Score, then i had to use encapsulation oriented programming as 
-                            the game SQL repository would need to use the review repository to work out an arrange score, as with out the game controller having assess to review repository it would not be possible. When editing 
-                            each method in the SQL repository I had a group member help me when making the code to find the score based on what the method was doing as it was extremely changing. Each method will look through all its games
-                            then gets the reviews where the game id matches the game id in the game table, then calculate the average  based on the all the scores taken from the reviews, finally it will round the score for the front end. The only 
-                            difference between the get all games method and get games by title method is I had add contains to the line that looks for the game id.
+                        <p class="date">Saturday 28th October</p>
+                        <p>When planning to work on displaying the average score against each game, I was going to make a method that could be used in the SQL game repository, however due to how the get game by title
+                             method works, this would not be possible, so I opted for changing each current name method to get data on a game.<br><br>
+
+                            I first had to remove the score entity from the game table in the database, as the score for each game will be determined by each review for that game. I then added a score element to the 
+                            review table. The score element will store a number that a user gives a game, the number will be between one and 100. I then had to add an average score class into the gameDTO so the SQL 
+                            Game repository would be able to inherit the average score and will be able to store an average score for later use. I then had to edit every method in the SQL game repository that 
+                            involved the user seeing a game's average score.<br><br>
+                            
+                            Each method had to inherit the get review method in the interface review repository. The get reviews method was used in conjunction with a '.Where' and a 'for each' statement to select
+                             reviews that have the same game ID as a game's ID. Each method changed had an added that would add each review's score then divide by how many reviews that fit the criteria, this would
+                              find the average score for that game. The methods then use Math.Round() to make the score more user-friendly. In JavaScript files the variable that was used to get a games score was 
+                              changed to game.averageScore rather than game. Score. The score table header in the UI got changed to Average score.
+                            
                         </p>
-                        <h3>Get all games by title method</h3>
+                        <h3>The GameDTO</h3>
                         <div class="flexcontainer">
                             <img src="assets/img/Score1.png" alt="">
                         </div>
-                        <h3>Get games by title method</h3>
+                        <h3>The get all games method in the SQl game repository</h3>
                         <div class="flexcontainer">
                             <img src="assets/img/Score2.png" alt="">
                         </div>
-                        <h3>All DTOs that had to be change</h3>
+                        <h3>The get games by title SQl game repository</h3>
                         <div class="flexcontainer">
                             <img src="assets/img/Score3.png" alt="">
                         </div>
-                        <h3>The new Game.cs file</h3>
+                        <h3>Game table and review table in database</h3>
                         <div class="flexcontainer">
                             <img src="assets/img/Score4.png" alt="">
+                        </div>
+                        <h3>Both Javascript files with average score changes</h3>
+                        <div class="flexcontainer">
+                            <img src="assets/img/Score5.png" alt="">
+                        </div>
+                        <h3>The UI showing the average score</h3>
+                        <div class="flexcontainer">
+                            <img src="assets/img/UI2.png" alt="">
                         </div>
                     </div>
                 </div>
