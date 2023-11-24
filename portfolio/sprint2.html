@@ -36,7 +36,7 @@
                             the group had considered is a login feature. With a login feature, the user will be logged in throughout the website. Doing this would eliminate the need for the
                              user to give the front end their username and password every time they want to submit a form. Other tasks were given to group members based on improvements they
                               could add to their sprint one tasks. I gave myself tasks that would improve my search game by title task and the general UI of the project. The tasks where:
-                               Search games to not be capital sensitive, Suggestion/Search box for searching games by title, and loading icon while games load. My other tasks included general
+                               Search games to not be capital sensitive, adding a star based review system and loading icon while games load. My other tasks included general
                                 icons throughout the webpage and the sign-up validation front end and API.</P>
                         <h3>The trello board (task management system)</h3>
                         <div class="flexcontainer">
@@ -177,8 +177,8 @@
                             I first had to figure out how the stars would look and how they would be displayed. I researched ways to display stars, and I came up with using font Awesome's 4.7 icons. Font Awesome 
                             works by having a style sheet link on all pages so then the HTML can use its custom icons where needed. To aid group members, I added the style sheet link to every page.<br><br>
                             I Started by making a template in HTML and CSS for a review so the group would know what the reviews would look like and suggest any improvements, then I started editing the Java Script.
-                             As I already made an HTML template, I opted for using the inner HTML function in JavaScript, as I would only have to make small changes to the HTML. I then had to make a system that
-                              would get the number of the average score and convert that into, so I made a variable that stored the average score into a variable and then compared the score to many if statements
+                             As I already made an HTML template, I opted for using the inner HTML function in JavaScript, as I would only have to make small changes to he HTML. I then had to make a system that
+                              would get the number of the average score and convert that into stars, so I made a variable that stored the average score from the API and then compared the score to many if statements
                                and if the score fit in the criteria a verbal called 'star' would store the right combination of icons for that star rating. I then did this for the reviews for the details page as
                                 well.<br><br>
                             A similar system was used for searching for games by title and the index game however, because nothing on the pages needed to be redesigned so I only needed to re-use the system used to 
@@ -208,6 +208,136 @@
 
                     </div>
                 </div>
+                <div class="flexcontainer">
+                    <div class="content fade">
+                        <h2>Login feature meeting</h2>
+                        <p class="date">Sunday 19th November</p>
+                        <p>Me and another group member decided to have a meeting about the following tasks and decided that we could create a login feature however, when
+                             deciding to do a login feature, we realised it would not be an easy task for one person, as it would involve many tasks. Due to how large a 
+                             login feature would be to create, my teammate and I decided to split the login task into smaller tasks. We made a branch called the login
+                              feature to ensure all changes worked together. Using a branch for both of us can actively test all features will work together. My first
+                               responsibility was to make a new header that would show the links in the original header and links to edit details, user reviews, user names
+                                and log out. The new header will also make room for the user's username, which would be gotten through my teammate's token task that will
+                                 fetch what is needed about the user. We delegated tasks this way so tasks from the login feature can be completed at a quicker pace.<br><br>
+
+                            When planning a login, we made some wireframe diagrams and web structure diagrams as the way the website would work after the changes would be 
+                            completely different from how it worked before the login feature. <br><br>
+                            
+                             While talking about the login feature, we decided to change how the game entity works entirely as it seemed very unsure at the time, as any user
+                              could make a game and edit a game without an account. We decided to make games an account must be required. The same goes for editing a game. 
+                              Games will now only be able to be changed by the user who made the game. <br><br>
+                            </p>
+                    </div>
+                </div>
+                <div class="flexcontainer">
+                    <div class="content fade">
+                        <h2>New header with user pages & New index page</h2>
+                        <p class="date">Monday 20th November</p>
+                        <p> I first had to make a page that let the user choose if they would like to log in or sign up. I started by creating a new HTML file called index.HTML. Because
+                             there was a file already called index.HTML I renamed that to home.HTML as home.HTML will be the page users get taken to when they have logged in after I styled
+                            the web page. <br> <br>
+
+                            To complete the header, I first tried to edit the existing header; however, that became a challenge as I had to consider existing styling for the current header. 
+                            Due to the complications of editing the existing header, I then made a new header from scratch using a new HTML and CSS file as I didn’t have to deal with the complications.
+                             Once I completed the base header, I then had to make another nav tag that would be used for the user web pages. I had to make another Nav tag to incorporate the user links
+                              into a hamburger menu. To make the hamburger menu disappear and reappear, I had to make a JavaScript file that would change the width so the user could see the hamburger
+                               menu and change the width to 0 when the user didn’t want to see it. Once I had the new header done, I had to add it to every page that needed it. <br> <br>
+                            </p>
+                            <h3>The new index page</h3>
+                            <div class ="flexcontainer">
+                                <img src="assets/img/Index.png" alt="">
+                            </div>
+                            <h3>The HTML for the new header that includes the user name</h3>
+                            <div class ="flexcontainer">
+                                <img src="assets/img/Header1.png" alt="">
+                            </div>
+                            <h3>The JavaScript that tells the hamburger menu to disappear and reappear</h3>
+                            <div class ="flexcontainer">
+                                <img src="assets/img/Header2.png" alt="">
+                            </div>
+                            <h3>The header in the UI</h3>
+                            <div class ="flexcontainer">
+                                <img src="assets/img/Header3.png" alt="">
+                            </div>
+                    </div>
+                </div>
+                <div class="flexcontainer">
+                    <div class="content fade">
+                        <h2>Edit game and make game form validation</h2>
+                        <p class="date">Tuesday 21th November</p>
+                        <p> After my teammate made/amended both forms to edit and create a game to include game details, I added some validation to the UI so a user could not enter invalid data. The 
+                            validation pops up below the input and tells the user why they cannot enter that input. I did this with all fields on each file. For each HTML file, I added a JavaScript file
+                             that gets all the user inputs by using the existing function called ‘get element by id’ to get the value of what the user inputted. Then, the JavaScript gets the ID of empty
+                              P tags using the same function. Then, each user input goes through if statements that meet the requirements. Before the if statements, there is a variable called ‘blankFields’,
+                               and if an if statement is used, it means that the user input is not valid, so the ‘blankfeilds’ variable is made true. Setting it to true means that the JavaScript will not
+                                submit the form. If the if statements are used then text will be sent to the blank P tags to tell the user what is wrong with the inputs. <br><br>
+
+                                I also made it so the edit game details form so the JavaScript would bring all the details into the inputs so the user would not have to re type everything. This was done by 
+                                gathering all the inputs by their IDs and making them variables, then using the ‘.value’. function to place the data from the API into the inputs. That makes for a pleasant 
+                                user experience, as uses do not have to retype a games details if they didn’t want to edit them. <br> <br>
+                        </p>
+                        <h3>The JavaScript used to validate inputs for create game</h3>
+                        <div class ="flexcontainer">
+                            <img src="assets/img/Formvalidation1.png" alt="">
+                        </div>
+                        <h3>What the UI looks like with the validation (Create game)</h3>
+                        <div class ="flexcontainer">
+                            <img src="assets/img/FormValidation2.png" alt="">
+                        </div>
+                        <h3>The JavaScript used to validate inputs for edit game</h3>
+                        <div class ="flexcontainer">
+                            <img src="assets/img/Formvalidation3.png" alt="">
+                        </div>
+                        <h3>What the UI looks like with the validation (edit game) <br>
+                            inputs above show the system that fills input with existing data
+                        </h3>
+                        <div class ="flexcontainer">
+                            <img src="assets/img/Formvalidation4.png" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flexcontainer">
+                    <div class="content fade">
+                        <h2>Edit game and make game form validation</h2>
+                        <p class="date">Tuesday 21th November</p>
+                        <p>To make the API create gamedetails, I first had to add a new method to the SQL game details repository. The new method is called 'CreateDetail,' and it is supposed to add game details to the 
+                            database. I then allowed the Interface game details repository to inherit the method I made. Then I made a new method in the game details controller <br> <br>
+                            that used HTTP POST and inherited the method I made in the SQL repository via the interface repository. My team member edited my Java Script to send the data to the API. However, the edit game 
+                            details still didn't work when testing the code. Later I found out the game DTO needed editing, so the game details are inherited that way the game details can be brought through with the general
+                             game data.<br><br>
+                        </p>
+                        <h3>The Game DTO with game details added</h3>
+                        <div class ="flexcontainer">
+                            <img src="assets/img/Editgame1.png" alt="">
+                        </div>
+                        <h3>The new method in the SQL game details repository</h3>
+                        <div class ="flexcontainer">
+                            <img src="assets/img/Editgame2.png" alt="">
+                        </div>
+                        <h3>The interface repository using the new method </h3>
+                        <div class ="flexcontainer">
+                            <img src="assets/img/Editgame3.png" alt="">
+                        </div>
+                        <h3>The new HTTP POST method in the controller</h3>
+                        <div class ="flexcontainer">
+                            <img src="assets/img/Editgame3.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="flexcontainer">
+                    <div class="content fade">
+                        <h2>Testing and database changes (dummy data)</h2>
+                        <p class="date">Wednesday 23th November</p>
+                        <p> Me and the group member tested the login branch for any errors that may have occurred when pushing to the branch. After that was fully tested, we merged the login branch to the main version and tested
+                             all the changes made with the main branch to see any errors. The only errors that was found were duplicates of lines that git hub added and lines that GitHub deleted when merging. We added and deleted
+                              the lines that needed editing, and everything worked fine. <br> <br>
+                            I then needed to make acceptable dummy data and delete testing data in preparation for the sprint two retrospective. 
+                            
+                        </p>
+                    </div>
+                </div>
+
     </div>
     <footer>
         <div id="topfooter" class="centercontents">
