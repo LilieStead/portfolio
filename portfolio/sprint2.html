@@ -42,22 +42,18 @@
                         <div class="flexcontainer">
                         <img src="assets/img/Trello2.png" alt="">
                         </div>
-                        <p>The group has not fully decided if we want to make a login feature, as time constraints and other assignments may get in the way. A login feature will make many 
-                            more tasks, such as redesigning the UI and making new methods to find a user’s reviews based on the account they are currently logged in as and researching and 
-                            implanting cookies or sessions to store user account information.</p>
                     </div>
                 </div>
                 <div class="flexcontainer ">
                     <div class="content fade">
                         <h2>Search game to not be capital sensitive & Loading icon while games load</h2>
                         <p class="date">Saturday 4th November</p>
-                        <p>I completed two of the tasks that I assigned myself to do now (Search game not to be capital sensitive, Suggestion/Search box when using search game by title and
+                        <p>I completed two of the tasks that I assigned myself to do now (Search game not to be capital sensitive, Search box when using search game by title and
                              Loading icon while games load). To make the loading icon/ animation, I first had to find some HTML and CSS that looked like an animated loading icon that suited 
-                             the UI of the project. Then, I made some more minor adjustments to it to suit the project's colour scheme. Then, I had to add a line to any JS files that displays
-                              reviews and games. The line will set the loading icons style to none so it’s not visible to the user.<br><br> To search by title, non-cap sensitive, I stopped the method 
-                              in the game controller inheriting mapper and instead made the method inherit classes from the GameDTO and Game.cs to find all the game details. I then added another
-                               three tasks to do, which was to uniform all forms on the webpage, prevent duplicate username on sign-up page and add a no games found feature where a user can search 
-                               for games.</P>
+                             the UI of the project. Then, I made some more minor adjustments to it to suit the project's colour scheme. Then, I added a line to the JavaScript that that
+                              loaded games and reviews in to make the display type none.
+                              <br><br> I modified the game controller to search for titles without case sensitivity. Instead of inheriting from the auto mapper, I made the method inherit 
+                              straight from the GameDTO and Game.cs to retrieve all game details.</P>
                         <h3>HTML and JS used to make the loading icon disappear when loaded</h3>
                         <div class="flexcontainer">
                             <img src="assets/img/Loading1.png" alt="">
@@ -83,12 +79,12 @@
                     <div class="content fade">
                         <h2>Uniform forms, Prevent Duplicate Username on sign up page & no games found</h2>
                         <p class="date">Sunday 5th November</p>
-                        <p>I have completed the Prevent Duplicate Username & Uniform forms. To make all the forms look more appalling and informed, I started by applying all the CSS I made to 
+                        <p>To make all the forms look more appalling and informed, I started by applying all the CSS I made to 
                             all the other forms, then I adjusted all the forms that looked smiler to each other so the UI looks more appalling.<br><br>
-                            To prevent duplicate usernames, I first had to add to the user controller. I had to make an If statement that look to see if the GameDM username matched a username
-                             in the database. Then if it did then return an error code that will be returned to the UI so the user knows why their account couldn't be created. Then I adjusted
-                              the sign-up page and its JS so it would know what to do with the error code, and would display an error to the user. After doing this task I added a new task to
-                              validate if an email a user signs-up is already in use, to improve the solutions security. <br> <br>
+                            To prevent duplicate usernames, I updated the user controller with an If statement to check if the entered username matches any in the database.
+                             If a match is found, an error code is returned to the UI from the controller, informing the user of the issue during account creation. I then 
+                             adjusted the sign-up page and its JavaScript to handle this error code and display a corresponding message to the user.
+                            <br> <br>
                               To get a message to show when no games are not found I first had to add an if statement to the search game JavaScript to look to see if data gotten from the API was equal
                               to 0 (meaning no games was found) . If no games were found, then the JS file will make a new table row in the front end and put 'no games found' in it so the user can see. </p>
                             <h3>The game controller with changes for username already exists</h3>
@@ -111,34 +107,33 @@
                             <div class="flexcontainer">
                                 <img src="assets/img/Nogamesfound3.png" alt="">
                             </div>
-                            <h3>sign in form</h3>
+                            <h3>sign-in form</h3>
                             <div class="flexcontainer">
                                 <img src="assets/img/form1.png" alt="">
                             </div>
-                        <p>After completing the no games found in the search by game title function, I added a task to do the same when using search review by user name to benefit the user. 
-                            Adding a task that tells a user that reviews were found will be similar to how I implemented no games to search by title with some minor adjustments. </p>
                     </div>
                 </div>
                 <div class="flexcontainer fade">
                     <div class="content ">
                         <h2>Validation for sign up form, API validation for same email and fixing the username validation bug fix.</h2>
                         <p class="date">Thursday 9th November</p>
-                        <p>After doing completing the username validation so a user can not make an account with the same username as another account, I thought it would be appropriate to do 
-                            the same thing with an email. When testing this change, I encountered an error when validating the username as if a user was to copy the same elements (eg. First 
-                            name, last name, password, or email) form other accounts then the ‘username already exits’ error would show instead of making a new account. Leaving this error in
-                             the API would ruin the user experience as a user could have the first name or last name as another account. To fix this I first had to inherit the Get use id by 
-                             name method so we could make a variable that would store details if a user with that username already exists, then I put that variable in and if statement and if 
-                             the variable had data in it, then a user with that username already exits and would return an error. <br> <br> 
+                        <p> After successfully implementing username validation to prevent users from creating accounts with duplicate usernames, I found it appropriate to extend the same
+                             validation to email addresses. When testing this change, I encountered an error when validating the username as if a user was to copy the same elements (eg. First 
+                            name, last name, password, or email) form other accounts then the ‘username already exits’ error would show instead of making a new account. To fix this I first had
+                             to inherit the Get use id by name method so we could make a variable that would store details if a user with that username already exists, then I put that variable
+                              in and if statement and if the variable had data in it, then a user with that username already exits and would return an error.<br> <br> 
                             
-                             Then to make the API validate a user’s email we first need to add a method to the SQL user repository to get all the users stored in the database, then I made the
-                              interface repository inherit the method for later us. Then I made the current method in the user controller inherit the method I added to the interface repository.
-                               After than I just used a for each statement in conjunction to that method to look at each user and see if they had the same username or not, and if they did return an
-                             error. <br> <br>
+                             Then to make the API validate a user’s email I first needed to add a method to the SQL user repository to get all the users stored in the database, then I made the
+                              interface repository inherit the method for later use by using abstract and polymorphism principles.
+                               Then I made the current method in the user controller inherit the method I added to the interface repository.
+                               After that I just used a for each statement in conjunction to that method to look at each user and see if they had the same email or not, and if they did return an
+                             error.<br> <br>
                             
-                             Then me and another group member that it would be a grate idea if the user was sent any semi-serious error messages (errors sent from the api) through a pop up, so the
-                              user had no choice to use it so I just link their Java scripted to the webpage then made some adjustments so it would read the errors straight from the API.<br> <br>
                             
-                              Finally, I added front end validation to the sign in page as there was none beforehand. I did this by adding an event listener to the java script so when the submit button 
+                            I revamped the API error messages to appear as semi-serious pop-up messages on the webpage. I linked my team members' pop-up JavaScript to the page and made necessary adjustments to directly fetch
+                            and display error messages from the API, ensuring users cannot overlook important information.<br> <br>
+                            
+                              Finally, I added front end validation to the sign-in page as there was none beforehand. I did this by adding an event listener to the java script so when the submit button 
                               is pressed it will look through all the user inputs and compare then with if statements to see if they match the right formats. If the inputs do not match, then the user will
                                be sent an error through the sine up web page.</P>
                         <h3>The method in the user controller  used to sign a user in with the changes used to fix the username errors and validate a users email</h3>
@@ -153,7 +148,7 @@
                         <div class="flexcontainer">
                         <img src="assets/img/Signin1.png"lt="">
                         </div>
-                        <h3>Apart of the java scrit that vlaidates all inputs on the sign up page</h3>
+                        <h3>Apart of the java script that validates all inputs on the sign up page</h3>
                         <div class="flexcontainer">
                         <img src="assets/img/Signup4.png"lt="">
                         </div>
@@ -212,20 +207,10 @@
                     <div class="content fade">
                         <h2>Login feature meeting</h2>
                         <p class="date">Sunday 19th November</p>
-                        <p>Me and another group member decided to have a meeting about the following tasks and decided that we could create a login feature however, when
-                             deciding to do a login feature, we realised it would not be an easy task for one person, as it would involve many tasks. Due to how large a 
-                             login feature would be to create, my teammate and I decided to split the login task into smaller tasks. We made a branch called the login
-                              feature to ensure all changes worked together. Using a branch for both of us can actively test all features will work together. My first
-                               responsibility was to make a new header that would show the links in the original header and links to edit details, user reviews, user names
-                                and log out. The new header will also make room for the user's username, which would be gotten through my teammate's token task that will
-                                 fetch what is needed about the user. We delegated tasks this way so tasks from the login feature can be completed at a quicker pace.<br><br>
-
-                            When planning a login, we made some wireframe diagrams and web structure diagrams as the way the website would work after the changes would be 
-                            completely different from how it worked before the login feature. <br><br>
-                            
-                             While talking about the login feature, we decided to change how the game entity works entirely as it seemed very unsure at the time, as any user
-                              could make a game and edit a game without an account. We decided to make games an account must be required. The same goes for editing a game. 
-                              Games will now only be able to be changed by the user who made the game. <br><br>
+                        <p>In collaboration with a team member, we discussed the issues of implementing a login feature and recognized that it would involve numerous tasks, 
+                            making it challenging for one person to handle. To ease the process, we decided to divide the login feature into smaller tasks and created a 
+                            dedicated branch for it. Our approach involved active collaboration on the branch to ensure seamless integration of all changes. We then delectated
+                             each other tasks for the login feature.
                             </p>
                     </div>
                 </div>
@@ -264,7 +249,7 @@
                 <div class="flexcontainer">
                     <div class="content fade">
                         <h2>Edit game and make game form validation</h2>
-                        <p class="date">Tuesday 21th November</p>
+                        <p class="date">Monday 20th November</p>
                         <p> After my teammate made/amended both forms to edit and create a game to include game details, I added some validation to the UI so a user could not enter invalid data. The 
                             validation pops up below the input and tells the user why they cannot enter that input. I did this with all fields on each file. For each HTML file, I added a JavaScript file
                              that gets all the user inputs by using the existing function called ‘get element by id’ to get the value of what the user inputted. Then, the JavaScript gets the ID of empty
@@ -299,15 +284,15 @@
 
                 <div class="flexcontainer">
                     <div class="content fade">
-                        <h2>Edit game and make game form validation</h2>
+                        <h2>Update to Create game API to includes game details </h2>
                         <p class="date">Tuesday 21th November</p>
                         <p>To make the API create gamedetails, I first had to add a new method to the SQL game details repository. The new method is called 'CreateDetail,' and it is supposed to add game details to the 
-                            database. I then allowed the Interface game details repository to inherit the method I made. Then I made a new method in the game details controller <br> <br>
+                            database. I then allowed the Interface game details repository to inherit the method I made via encapsulation and Polymorphism. Then I made a new method in the game details controller,
                             that used HTTP POST and inherited the method I made in the SQL repository via the interface repository. My team member edited my Java Script to send the data to the API. However, the edit game 
                             details still didn't work when testing the code. Later I found out the game DTO needed editing, so the game details are inherited that way the game details can be brought through with the general
                              game data.<br><br>
                         </p>
-                        <h3>The Game DTO with game details added</h3>
+                        <h3>The Game DTO with game details</h3>
                         <div class ="flexcontainer">
                             <img src="assets/img/Editgame1.png" alt="">
                         </div>
@@ -321,19 +306,55 @@
                         </div>
                         <h3>The new HTTP POST method in the controller</h3>
                         <div class ="flexcontainer">
-                            <img src="assets/img/Editgame3.png" alt="">
+                            <img src="assets/img/Editgame4.png" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="flexcontainer">
                     <div class="content fade">
-                        <h2>Testing and database changes (dummy data)</h2>
+                        <h2>Changes to review (login feature)</h2>
+                        <p class="date">Tuesday 22th November</p>
+                        <p>I then had to edit some of the pages that show reviews. To do this, I had to edit the JavaScript files that tell the UI to show the reviews, I allowed the JavaScript I originally made to uses my team 
+                            member's token function that will enable the API to find a user userID. It works by looking to see if the userID with each review is the same as the tokenID (the tokenID is the users ID who has logged
+                             in). If both are the same, then the Javascript will use the inner HTML function to display the edit and delete options, and if they are not, then options will not show and will only use blank links
+                              and won't be displayed.  
+                        </p>
+                        <h3>How reviews user and non user reviews look</h3>
+                        <div class ="flexcontainer">
+                            <img src="assets/img/Loginreview1.png" alt="">
+                        </div>
+                        <h3>The JavaScript that decides if the review option go with the review</h3>
+                        <div class ="flexcontainer">
+                            <img src="assets/img/Loginreview2.png" alt="">
+                        </div>
+                </div>
+
+                <div class="flexcontainer">
+                    <div class="content fade">
+                        <h2>The my games page </h2>
                         <p class="date">Wednesday 23th November</p>
+                        <p>To make the my games page, I re-used the home page as they have similar elements, then to make the Java script that uses a fetch to get all games in the API, but then the Java script will look to see 
+                            if the user ID stored in TokenID is the same as the user ID stored in the game. If they are both the same, then it will display the game. 
+                        </p>
+                        <h3>What the UI looks like</h3>
+                        <div class ="flexcontainer">
+                            <img src="assets/img/Mygame1.png" alt="">
+                        </div>
+                        <h3>The java script that is used to get the data where both ids match</h3>
+                        <div class ="flexcontainer">
+                            <img src="assets/img/Mygames2.png" alt="">
+                            
+                        </div>
+                </div>
+
+                <div class="flexcontainer">
+                    <div class="content fade">
+                        <h2>Testing and database changes</h2>
+                        <p class="date">Wednesday 22th November</p>
                         <p> Me and the group member tested the login branch for any errors that may have occurred when pushing to the branch. After that was fully tested, we merged the login branch to the main version and tested
                              all the changes made with the main branch to see any errors. The only errors that was found were duplicates of lines that git hub added and lines that GitHub deleted when merging. We added and deleted
                               the lines that needed editing, and everything worked fine. <br> <br>
-                            I then needed to make acceptable dummy data and delete testing data in preparation for the sprint two retrospective. 
-                            
+                            I then needed to make acceptable dummy data and delete testing data in preparation for the sprint two retrospective.
                         </p>
                     </div>
                 </div>

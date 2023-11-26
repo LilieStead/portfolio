@@ -37,10 +37,10 @@
                             leading parts of the conversation and expanded on tasks by asking how they would like specific tasks to be displayed to the user and how they 
                             would like them executed.<br> <br>
 
-                            After the meeting, the group identified tasks that would be dependent on others and prioritized the task. Then we assigned a task based on group 
-                            member's strengths and weaknesses. The group decided to take one task at a time so group members could pick another one once done and not have to
-                             wait for other group members to finish a task they depended on. My task was to normalize the current database so the platform was no longer static
-                              data but rather a foreign key, this would also involve changing and adding multiple files to the existing solution. <br> <br>
+                            Following the meeting, our group strategically identified interdependent tasks and prioritized them. We then assigned tasks based on each group
+                             member's strengths and weaknesses. To maintain efficiency, we opted to tackle one task at a time, allowing members to move on to the next one 
+                             independently once completed. My assigned task involved normalizing the existing database, transforming the platform from static data to one
+                              with foreign keys.<br> <br>
                             
                               Then, another group member and I made and tested a git hub repository for the solution, as it will ease the process of group members uploading code
                                at multiple points. Each group member has their own branch that they could make changes to, however, if they wanted to upload changes to the main 
@@ -69,7 +69,7 @@
                                information from classes from the new PlatformDTO.cs and Platform.cs. Both files are needed otherwise, platform information will not be gathered, I then had
                                 add a DBSET to the GameDbContext.cs so the API could use the PlatformDTO and Platform.cs to make queys. When making the changes. I then had to edit the SQL
                                  game repository as a line was needed to include the platform with the game when outputting data, this was done by using the entity frame work function
-                                .include . Finally I needed to make a mapper method to that inherited the both PlatformDTO and the Game.cs that linked them together when they needed to
+                                .include . Finally I needed to make a mapper navigation method to that inherited the both PlatformDTO and the Game.cs that linked them together when they needed to
                                 be used in a method. I found an error that prevented the data from going to the front end, so I left it till the next day.
                             
                         </p>
@@ -140,12 +140,12 @@
                             make a new method in the Game controller. The method uses the HTTPGet to find what the user has typed by using the URL. It looks for 'Title =' 
                             with what the user typed to determine what it is looking for, then I had to make a new method in the SQL game repository. The method made in 
                             the SQL game repository uses the entity frame work method '.contain' line to compare the title that the user with every game title. Then it 
-                            takes the games that contain what the user typed after I had to add/inherit the method in the interface game repository so the game controller
-                             can inherit the method and use it.<br><br>
+                            takes the games that contain what the user typed after I had to inherit using Encapsulation the method in the interface game repository so 
+                            the game controller can inherit the method and use it.<br><br>
 
                             To allow the front end to use the API, I first had to make a form in which a user can enter the game's title. The form uses the POST method so
-                             the user input is stored in the URL when the page refreshes. The I needed to make a JavaScript file that uses a built-in function to search in
-                              the URL for the title to then add the title to the fetch that the JavaScript uses to ask the API for all games that have that title.<br><br>
+                            the user input is stored in the URL when the page refreshes. The I needed to make a JavaScript file that uses a built-in function to search in
+                            the URL for the title to then add the title to the fetch that the JavaScript uses to ask the API for all games that have that title.<br><br>
                             
                             Originally, in the SQL game repository, I was going to use the entity framework method '.where' rather than '.contains'; however, if this was 
                             implanted instead, it would mean that the user would need to type a name exactly to find the game they are looking for, and this would not be
